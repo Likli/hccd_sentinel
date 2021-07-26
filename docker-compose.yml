@@ -1,0 +1,32 @@
+version: '3'
+
+
+services:
+  hccd:
+    image: hcccrypto/hccd
+    container_name: hccd
+    volumes:
+      - ./.hcccore:/root/.hcccore
+      - ./hccd_start:/root/hccd_start
+    ports:
+      - 8888:8888
+      - 9998:9998
+    command:
+      - cd /root/hccd_start
+      - ./start.sh
+    expose:  # new
+      - 8888
+      - 9998
+    environment:
+      RPCALLOWIP: sentinel
+    depends_on:
+      - sentinel
+    restart: 'always'
+
+  sentinel:
+    build: ./sentinel
+    container_name: sentinel
+    volumes:
+      - ./.hcccore:/.hcccore
+      - ./sentinel:/sentinel
+    restart: 'always'
