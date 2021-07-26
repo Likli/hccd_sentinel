@@ -27,6 +27,7 @@ services:
       - 9998:9998
     command:
       - hccd
+      - -rpcallowip=172.16.238.10
     expose: # new
       - 8888
       - 9998
