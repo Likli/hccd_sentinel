@@ -25,7 +25,6 @@ services:
       - 9998:9998
     command:
       - hccd
-      - -rpcallowip=172.16.238.0/24
     depends_on:
       - sentinel
     networks:
