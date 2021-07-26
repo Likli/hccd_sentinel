@@ -12,6 +12,9 @@ services:
       - .env
     expose: # new
       - 5555
+    networks:
+      main:
+        ipv4_address: 172.16.238.10
     restart: 'always'
 
   hccd:
@@ -29,4 +32,10 @@ services:
       - 9998
     depends_on:
       - sentinel
+    networks:
+      main:
+        ipv4_address: 172.16.238.11
     restart: 'always'
+
+networks:
+  main:
