@@ -20,11 +20,9 @@ services:
     ports:
       - 8888:8888
       - 9998:9998
-    environment:
-      rpcallowip: sentinel
     command:
       - hccd
-      - -rpcallowip=${rpcallowip}
+      - -rpcallowip=sentinel
     expose: # new
       - 8888
       - 9998
