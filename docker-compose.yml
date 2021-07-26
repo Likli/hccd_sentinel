@@ -7,12 +7,11 @@ services:
     container_name: hccd
     volumes:
       - ./.hcccore:/root/.hcccore
-      - ./hccd_start:/root/hccd_start
     ports:
       - 8888:8888
       - 9998:9998
     command:
-      - cd /root/hccd_start
+      - cd /root/.hcccore
       - ./start.sh
     expose:  # new
       - 8888
