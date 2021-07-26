@@ -3,7 +3,7 @@ version: '3'
 
 services:
   hccd:
-    build: ./.hcccore
+    image: hcccrypto/hccd
     container_name: hccd
     volumes:
       - ./.hcccore:/root/.hcccore
@@ -15,14 +15,6 @@ services:
     expose:  # new
       - 8888
       - 9998
-    environment:
-      RPCALLOWIP: sentinel
-      RPCUSER: $RPCUSER
-      RPCPASSWORD: $RPCPASSWORD
-      ADDNODE: $ADDNODE
-      EXTERNALIP: $EXTERNALIP
-      MASTERNODEBLSPRIVKEY: $MASTERNODEBLSPRIVKEY
-      RPCBIND: $RPCBIND
     depends_on:
       - sentinel
     restart: 'always'
@@ -33,4 +25,12 @@ services:
     volumes:
       - ./.hcccore:/.hcccore
       - ./sentinel:/sentinel
+    environment:
+      RPCALLOWIP: sentinel
+      RPCUSER: $RPCUSER
+      RPCPASSWORD: $RPCPASSWORD
+      ADDNODE: $ADDNODE
+      EXTERNALIP: $EXTERNALIP
+      MASTERNODEBLSPRIVKEY: $MASTERNODEBLSPRIVKEY
+      RPCBIND: $RPCBIND
     restart: 'always'
