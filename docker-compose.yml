@@ -29,11 +29,4 @@ services:
       - ./sentinel:/sentinel
     env_file:
       - .env
-    environment:
-      rpcuser: $rpcuser
-      rpcpassword: $rpcpassword
-      addnode: $addnode
-      externalip: $externalip
-      masternodeblsprivkey: $masternodeblsprivkey
-      rpcbind: $rpcbind
     restart: 'always'
