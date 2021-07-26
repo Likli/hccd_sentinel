@@ -17,8 +17,6 @@ services:
     expose:  # new
       - 8888
       - 9998
-    links:
-      - sentinel:sentinel
     depends_on:
       - sentinel
     restart: 'always'
