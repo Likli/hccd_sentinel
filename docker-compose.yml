@@ -24,11 +24,6 @@ services:
       - 9998:9998
     command:
       - hccd
-      - -rpcallowip=sentinel
-    environment:
-      sentinel: sentinel
-    links:
-      - sentinel
     expose: # new
       - 8888
       - 9998
