@@ -29,10 +29,10 @@ services:
       - .env
     environment:
       RPCALLOWIP: sentinel
-      RPCUSER: $RPCUSER
-      RPCPASSWORD: $RPCPASSWORD
-      ADDNODE: $ADDNODE
-      EXTERNALIP: $EXTERNALIP
-      MASTERNODEBLSPRIVKEY: $MASTERNODEBLSPRIVKEY
-      RPCBIND: $RPCBIND
+      rpcuser: $rpcuser
+      rpcpassword: $rpcpassword
+      addnode: $addnode
+      externalip: $externalip
+      masternodeblsprivkey: $masternodeblsprivkey
+      rpcbind: $rpcbind
     restart: 'always'
