@@ -10,6 +10,8 @@ services:
       - ./sentinel:/sentinel
     env_file:
       - .env
+    expose: # new
+      - 5555
     restart: 'always'
 
   hccd:
@@ -22,8 +24,7 @@ services:
       - 9998:9998
     command:
       - hccd
-      - -rpcallowip=
-      - sentinel
+      - -rpcallowip=sentinel
     expose: # new
       - 8888
       - 9998
