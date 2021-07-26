@@ -10,9 +10,6 @@ services:
       - ./sentinel:/sentinel
     env_file:
       - .env
-    networks:
-      main:
-        ipv4_address: 172.16.238.10
     restart: 'always'
 
   hccd:
@@ -27,15 +24,4 @@ services:
       - hccd
     depends_on:
       - sentinel
-    networks:
-      main:
-        ipv4_address: 172.16.238.11
     restart: 'always'
-
-networks:
-  main:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.16.238.0/24
