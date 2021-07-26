@@ -10,8 +10,6 @@ services:
       - ./sentinel:/sentinel
     env_file:
       - .env
-    expose: # new
-      - 5555
     networks:
       main:
         ipv4_address: 172.16.238.10
@@ -28,9 +26,6 @@ services:
     command:
       - hccd
       - -rpcallowip=172.16.238.0/24
-    expose: # new
-      - 8888
-      - 9998
     depends_on:
       - sentinel
     networks:
