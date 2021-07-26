@@ -28,7 +28,7 @@ services:
     environment:
       sentinel: sentinel
     links:
-      - sentinel: sentinel
+      - sentinel
     expose: # new
       - 8888
       - 9998
