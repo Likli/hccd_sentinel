@@ -2,6 +2,16 @@ version: '3'
 
 
 services:
+  sentinel:
+    build: ./sentinel
+    container_name: sentinel
+    volumes:
+      - ./.hcccore:/.hcccore
+      - ./sentinel:/sentinel
+    env_file:
+      - .env
+    restart: 'always'
+
   hccd:
     image: hcccrypto/hccd
     container_name: hccd
@@ -15,19 +25,9 @@ services:
     command:
       - hccd
       - -rpcallowip=${rpcallowip}
-    expose:  # new
+    expose: # new
       - 8888
       - 9998
     depends_on:
       - sentinel
-    restart: 'always'
-
-  sentinel:
-    build: ./sentinel
-    container_name: sentinel
-    volumes:
-      - ./.hcccore:/.hcccore
-      - ./sentinel:/sentinel
-    env_file:
-      - .env
     restart: 'always'
