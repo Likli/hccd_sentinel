@@ -28,7 +28,7 @@ services:
     env_file:
       - .env
     environment:
-      RPCALLOWIP: sentinel
+      rpcallowip: sentinel
       rpcuser: $rpcuser
       rpcpassword: $rpcpassword
       addnode: $addnode
