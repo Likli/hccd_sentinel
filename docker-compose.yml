@@ -3,7 +3,7 @@ version: '3'
 
 services:
   hccd:
-    image: hcccrypto/hccd
+    build: ./.hcccore
     container_name: hccd
     volumes:
       - ./.hcccore:/root/.hcccore
