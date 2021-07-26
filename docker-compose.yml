@@ -25,6 +25,8 @@ services:
     volumes:
       - ./.hcccore:/.hcccore
       - ./sentinel:/sentinel
+    env_file:
+      - .env
     environment:
       RPCALLOWIP: sentinel
       RPCUSER: $RPCUSER
