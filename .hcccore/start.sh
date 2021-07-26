@@ -18,9 +18,6 @@ if [ ! -f /root/.hcccore/hcc.conf ]; then
   if [ -n "$RPCPASSWORD" ]; then
     echo "rpcpassword=${RPCPASSWORD}" >> /root/.hcccore/hcc.conf
   fi
-  if [ -n "$RPCPORT" ]; then
-    echo "rpcport=${RPCPORT}" >> /root/.hcccore/hcc.conf
-  fi
   if [ -n "$RPCALLOWIP" ]; then
     echo "rpcallowip=${RPCALLOWIP}" >> /root/.hcccore/hcc.conf
   fi

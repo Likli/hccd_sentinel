@@ -17,6 +17,12 @@ services:
       - 9998
     environment:
       RPCALLOWIP: sentinel
+      RPCUSER: $RPCUSER
+      RPCPASSWORD: $RPCPASSWORD
+      ADDNODE: $ADDNODE
+      EXTERNALIP: $EXTERNALIP
+      MASTERNODEBLSPRIVKEY: $MASTERNODEBLSPRIVKEY
+      RPCBIND: $RPCBIND
     depends_on:
       - sentinel
     restart: 'always'
