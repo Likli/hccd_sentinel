@@ -19,7 +19,7 @@ services:
       - 8888
       - 9998
     links:
-      - sentinel
+      - sentinel:sentinel
     depends_on:
       - sentinel
     restart: 'always'
